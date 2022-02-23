@@ -1,0 +1,12 @@
+const inputElem = document.querySelector("input");
+const lengthElem = inputElem.getAttribute("data-length");
+
+const onInputBlur = (event) => {
+  event.target.classList.add("invalid");
+
+  if (parseInt(lengthElem) === event.target.value.length) {
+    event.target.classList.replace("invalid", "valid");
+  }
+};
+
+inputElem.addEventListener("blur", onInputBlur);
