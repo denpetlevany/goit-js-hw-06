@@ -7,27 +7,28 @@ const controlsElem = document.querySelector("#controls");
 const input = controlsElem.querySelector("input");
 const createBtnRef = controlsElem.querySelector("[data-create]");
 const destroyBtnRef = controlsElem.querySelector("[data-destroy]");
-let value = 20;
+let value = 30;
 
 const createBoxes = (amount) => {
   const boxes = [];
-    while (boxes.length < amount) {
-    value += 10;
+  while (boxes.length < amount) {
     const box = document.createElement("div");
     box.style.backgroundColor = getRandomHexColor();
     box.style.height = `${value}px`;
     box.style.width = `${value}px`;
     box.classList.add("box");
+    value += 10;
 
     boxes.push(box);
   }
+  input.value = "";
 
   boxesElem.append(...boxes);
 };
 
 const destroyBoxes = () => {
   const boxes = boxesElem.querySelectorAll(".box");
-  value = 20;
+  value = 30;
   for (const box of boxes) {
     box.remove();
   }

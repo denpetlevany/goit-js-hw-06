@@ -6,6 +6,8 @@ const onInputBlur = (event) => {
 
   if (parseInt(lengthElem) === event.target.value.length) {
     event.target.classList.replace("invalid", "valid");
+  } else {
+    event.target.classList.remove("valid");
   }
 };
 
